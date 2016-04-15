@@ -18,9 +18,9 @@ Sample Extension Service for Kaazing Gateway
 
     ```
     <service>
-      <name>echo2</name>
-      <description>Extended echo service</description>
-      <accept>ws://localhost:8000/echo2</accept>
+      <name>sample</name>
+      <description>Sample service where you say what it says</description>
+      <accept>ws://localhost:8000/sample</accept>
 
       <type>sample.service-extension</type>
 
@@ -37,9 +37,9 @@ Sample Extension Service for Kaazing Gateway
 
     `$ GATEWAY_HOME/bin/gateway.start`
 
-0. Open the [websocket.org echo test](http://www.websocket.org/echo.html?location=ws://localhost:8000/echo2) in a browser.
+0. Open the [websocket.org echo test](http://www.websocket.org/echo.html?location=ws://localhost:8000/sample) in a browser.
 
-0. Make sure the **Location** field says `ws://localhost:8000/echo2` (or matches whatever you put in your service `<accept>` earlier).
+0. Make sure the **Location** field says `ws://localhost:8000/sample` (or matches whatever you put in your service `<accept>` earlier).
 
 0. Connect and send a message. You will receive a message back which says "Go Warriors!", or whatever you specified in `<what-to-say>`.
 
