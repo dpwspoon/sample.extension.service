@@ -11,6 +11,7 @@ Sample Extension Service for Kaazing Gateway
 0. Put the service jar into an existing Gateway installation:
 
     `$ cp target/sample.extension.service-N.N.N-SNAPSHOT.jar GATEWAY_HOME/lib`
+    
     where `GATEWAY_HOME` is the location of your Gateway installation.
 
 0. Add a new service into your `GATEWAY_HOME/conf/gateway-config.xml` configuration:
