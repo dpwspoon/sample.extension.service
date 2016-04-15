@@ -18,8 +18,6 @@ package org.kaazing.sample.extension.service;
 import java.nio.ByteBuffer;
 
 import org.kaazing.gateway.transport.IoHandlerAdapter;
-import org.kaazing.gateway.transport.ws.WsSession;
-import org.kaazing.gateway.transport.ws.bridge.filter.WsBuffer;
 import org.kaazing.gateway.util.LoggingUtils;
 import org.kaazing.mina.core.buffer.IoBufferAllocatorEx;
 import org.kaazing.mina.core.buffer.IoBufferEx;
@@ -37,10 +35,9 @@ class SampleServiceHandler extends IoHandlerAdapter<IoSessionEx> {
 
     @Override
     protected void doMessageReceived(final IoSessionEx session, Object message) throws Exception {
-        IoBufferAllocatorEx<? extends WsBuffer> allocator =
-                (IoBufferAllocatorEx<? extends WsBuffer>) session.getBufferAllocator();
-        WsBuffer wsBuffer = allocator.wrap(ByteBuffer.wrap(whatToSay.getBytes()), IoBufferEx.FLAG_SHARED);
-        session.write(wsBuffer);
+        IoBufferAllocatorEx<?> allocator = session.getBufferAllocator();
+        IoBufferEx buffer = allocator.wrap(ByteBuffer.wrap(whatToSay.getBytes()), IoBufferEx.FLAG_SHARED);
+        session.write(buffer);
     }
 
     @Override

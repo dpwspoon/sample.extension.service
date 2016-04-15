@@ -36,7 +36,7 @@ public class SampleService implements Service {
 
     @Override
     public String getType() {
-        return "echo";
+        return "sample.service-extension";
     }
 
     @Override

@@ -32,8 +32,7 @@ public class SampleServiceTest {
                     .name("warrior promotion service")
                     .type("sample.service-extension")
                     .property("what-to-say", "Go Warriors")
-                    // for this we will use websocket, see implementation of doMessageRecieve
-                    // in SampleServiceHandler where we assume it is websocket
+                    // for this we will use websocket, but any transport should work
                     .accept("ws://localhost:8000")
                     .crossOrigin()
                          // for testing purpose allow any cross origin
